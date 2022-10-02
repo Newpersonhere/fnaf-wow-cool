@@ -47,7 +47,7 @@ function Animatronic({
     if(stages.Freddy && stages.Chica && stages.Bonnie)willMove("Freddy", FreddyIterator, FreddyTime, true);
 
     return () => {
-      FreddyIterator = Functions.Freddy();
+      FreddyIterator = Functions.Freddy(1000);
       BonnieIterator = Functions.Bonnie();
       ChicaIterator = Functions.Chica();
       FoxyIterator = Functions.Foxy();
@@ -153,7 +153,7 @@ function Animatronic({
     }
   };
   useEffect(() => {
-    if (blackout) isBlackout = true;
+    if (blackout) isBlackout = false;
   }, [blackout]);
 
   function willMove (character, iterator, animaTime) {
